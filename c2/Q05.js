@@ -1,6 +1,4 @@
-const cartvalue = [100,200,30,50,70]
-
-function totalCost(discount=10,cartvalue){
+function totalCost(discount=10,...cartvalue){
     const sum= cartvalue.reduce((total,cartvalue)=>{
         total = cartvalue + total 
         return total 
@@ -14,6 +12,6 @@ function totalCost(discount=10,cartvalue){
     return total
 }
 
-const c = totalCost(20,cartvalue)
+const c = totalCost(undefined,10,20,30,40)
 console.log("discounted price is:");
 console.log(c);
