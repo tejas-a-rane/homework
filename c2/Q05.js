@@ -13,5 +13,4 @@ function totalCost(discount=10,...cartvalue){
 }
 
 const c = totalCost(undefined,10,20,30,40)
-console.log("discounted price is:");
-console.log(c);
+console.log("discounted price is:"+c);
