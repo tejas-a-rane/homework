@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    CART
+    <button id="addToCart">SUBMIT</button>
+    <ul id="ul">
+        <li>A</li>
+        <li>B</li>
+        <li>C</li>
+    </ul>
+    <script>
+        const addToCart = document.getElementById("addToCart")
+        addToCart.addEventListener("click",()=>{
+            const ul = document.getElementById("ul")
+            alert("No of items in cart :"+ul.children.length)
+
+            localStorage.setItem("count",ul.children.length)
+        })
+    </script>
+</body>
+</html>

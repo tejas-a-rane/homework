@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Product Name <input type="text" id="pname"><br>
+    Price <input type="text" id="price"><br>
+    Quantity <input type="text" id="quantity"><br>
+    <button id="btn">SUBMIT</button>
+    <script>
+        const btn = document.getElementById("btn")
+        btn.addEventListener("click",()=>{
+            const pname = document.getElementById("pname").value
+            const price = document.getElementById("price").value
+            const quantity = document.getElementById("quantity").value
+
+            const pnameReg =/^[A-Za-z]+$/;
+            const priceReg =/^(?=.*[1-9])[\d]+$/;
+            const quantReg =/^(?=.*[1-9])[\d]+$/;
+
+            if(!pnameReg.test(pname)){
+                alert("enter valid product name");
+            }
+            if(!priceReg.test(price)){
+                alert("enter valid price");
+            }
+            if(!quantReg.test(quantity)){
+                alert("enter valid quantity");
+            }
+            
+            let prod = [pname,price,quantity]
+            let existingData = JSON.parse(localStorage.getItem("info"))||[]
+            existingData.push(prod)
+            localStorage.setItem("info",JSON.stringify(existingData))
+        })
+
+
+    </script>
+</body>
+</html>

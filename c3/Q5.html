@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Customer Name <input type="text" id="cname"><br>
+    Product <input type="text" id="product"><br>
+    Address <input type="text" id="addr"><br>
+    <button id="btn">SUBMIT</button>
+    <script>
+        const btn = document.getElementById("btn")
+        btn.addEventListener("click",()=>{
+            const cname = document.getElementById("cname").value
+            const product = document.getElementById("product").value
+            const addr = document.getElementById("addr").value
+
+            const cnameReg =/^[A-Za-z]+$/;
+            //const productReg =/^(?=.*[1-9])[\d]+$/;
+            const addrReg =/^[A-Za-z\d]+$/;
+
+            if(!cnameReg.test(cname)){
+                alert("enter valid name");
+            }
+            // if(!priceReg.test(price)){
+            //     alert("enter valid price");
+            // }
+            if(!addrReg.test(addr)){
+                alert("enter valid address");
+            }
+            
+            let customer = [cname,product,addr]
+            let existingData = JSON.parse(localStorage.getItem("info"))||[]
+            existingData.push(customer)
+            localStorage.setItem("info",JSON.stringify(existingData))
+        })
+
+
+    </script>
+</body>
+</html>

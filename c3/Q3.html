@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Count : <span id="count">0</span>
+    <button onclick="inc()">Inc</button>
+    <button onclick="reset()">Reset</button>
+    <script>
+        let  count=0
+        function inc(){
+            const ct = document.getElementById("count")
+            count++
+            ct.innerText=count
+        }
+        function reset(){
+            const ct = document.getElementById("count")
+            count=0
+            ct.innerText=count
+        }
+    </script>
+</body>
+</html>
